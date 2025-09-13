@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-transition: 0.3s;
+  --main-color: #3b5d50;
+  --yellow-color: #f9bf29;
+  --black-color: #2f2f2f;
+  --bg-green: #dce5e4;
+}
+
+*::selection {
+  background-color: var(--yellow-color);
+  color: black;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ecf0f3;
+  color: #2d3436;
+}
+
+.control {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(3, 169, 244, 0.8);
+
+  span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f44336;
+    color: white;
+    padding: 15px 25px;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  margin: 20px auto 0;
+  background-color: #f6f6f6;
+  padding: 20px;
+  font-size: 24px;
+  overflow: hidden;
+  border: 2px solid #dadfe1;
+
+  .tries {
+    color: #636e72;
+  }
+}
+
+.game {
+  display: flex;
+  width: 820px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+
+  &.no-clicking {
+    pointer-events: none;
+  }
+  .game-block {
+    position: relative;
+    flex: 1 0 140px;
+    margin: 0 10px 20px;
+    height: 140px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    &.flipped,
+    &.done {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+      pointer-events: none;
+    }
+
+    .front {
+      background-color: #2c3e50;
+      line-height: 140px;
+
+      &::before {
+        content: "?";
+        color: white;
+        font-size: 100px;
+        font-weight: 600;
+      }
+    }
+
+    .back {
+      background-color: #3498db;
+      transform: rotateY(180deg);
+    }
+
+    img {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100px;
+      height: 100px;
+      align-items: center;
+      margin: auto;
+    }
+
+    .face {
+      position: absolute;
+      height: 150px;
+      width: 150px;
+      text-align: center;
+      backface-visibility: hidden;
+      border: 3px solid #5dade2;
+    }
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+.popup {
+  position: relative;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: zoomIn 0.4s ease;
+
+  h2 {
+    color: #28a745;
+    margin-bottom: 15px;
+  }
+
+  button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+/* Media responsive */
+@media (max-width: 815px) {
+  .info-container {
+    width: 350px;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .game {
+    width: 350px;
+
+    .game-block {
+      flex: 1 0 50px;
+      height: 50px;
+
+      .front {
+        line-height: 50px;
+
+        &::before {
+          font-size: 40px;
+        }
+      }
+
+      img {
+        width: 35px;
+        height: 35px;
+      }
+
+      .face {
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+
+  .popup { 
+    width: 320px;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

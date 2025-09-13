@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/output.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Memory Blocks Game</title>
+    </head>
+    <body>
+        <div class="control">
+            <span>Start Game</span>
+        </div>
+        <div class="info-container">
+            <div class="name w-[30%]">
+                Hello: <span></span>
+            </div>
+            <div class="time w-[30%] text-center">
+                Time: 01:30
+            </div>
+            <div class="tries w-[30%] text-right">
+                Wrong Tries: <span>0</span>
+            </div>
+        </div>
+        <div class="game">
+            <div class="game-block" data-image="image-1">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/ai-brain.png" alt>
+                </div>
+            </div>
+            <div class="game-block" data-image="image-1">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/ai-brain.png" alt>
+                </div>
+            </div>
+
+            <div class="game-block" data-image="image-2">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/conrtoller.png" alt>
+                </div>
+            </div>
+            <div class="game-block" data-image="image-2">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/conrtoller.png" alt>
+                </div>
+            </div>
+
+            <div class="game-block" data-image="image-3">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/education.png" alt>
+
+                </div>
+            </div>
+            <div class="game-block" data-image="image-3">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/education.png" alt>
+                </div>
+            </div>
+
+            <div class="game-block" data-image="image-4">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/innovation.png" alt>
+                </div>
+            </div>
+            <div class="game-block" data-image="image-4">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/innovation.png" alt>
+                </div>
+            </div>
+
+            <div class="game-block" data-image="image-5">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/learning.png" alt>
+                </div>
+            </div>
+            <div class="game-block" data-image="image-5">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/learning.png" alt>
+                </div>
+            </div>
+
+            <div class="game-block" data-image="image-6">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/mortarboard.png" alt>
+                </div>
+            </div>
+            <div class="game-block" data-image="image-6">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/mortarboard.png" alt>
+                </div>
+            </div>
+
+            <div class="game-block" data-image="image-7">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/motivation.png" alt>
+                </div>
+            </div>
+
+            <div class="game-block" data-image="image-7">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/motivation.png" alt>
+                </div>
+            </div>
+
+            <div class="game-block" data-image="image-8">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/plane.png" alt>
+                </div>
+            </div>
+            <div class="game-block" data-image="image-8">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/plane.png" alt>
+                </div>
+            </div>
+
+            <div class="game-block" data-image="image-9">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/purpose.png" alt>
+                </div>
+            </div>
+            <div class="game-block" data-image="image-9">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/purpose.png" alt>
+                </div>
+            </div>
+
+            <div class="game-block" data-image="image-10">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/puzzle.png" alt>
+                </div>
+            </div>
+            <div class="game-block" data-image="image-10">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="Image/puzzle.png" alt>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="overlay">
+            <div class="popup">
+                <h2></h2>
+                <p>You completed the game successfully 👏</p>
+                <button onclick="restartGame()">Play Again</button>
+            </div>
+        </div>
+
+        <audio src="correct.mp3" preload="auto" class="correct-audio"></audio>
+        <audio src="wrong.mp3" preload="auto" class="wrong-audio"></audio>
+        <audio src="youWin.mp3" preload="auto" class="win"></audio>
+        <audio src="fail-trumpet-242645 (1).mp3" preload="auto"
+            class="fail"></audio>
+        <script src="JavaScript/main.js"></script>
+    </body>
+</html>

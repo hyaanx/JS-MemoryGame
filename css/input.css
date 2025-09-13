@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --tracking-1: 1px;
+  --spacing-10: 10px;
+}
